@@ -34,7 +34,7 @@ namespace LoginApp
                 // Encrypt Password before saving to DB
 
                 string lowerEmail = txtEmail.Text.ToLower(new CultureInfo("en-US", false));
-                var xy = "";
+                var xyz = "";
                 var user = db.Users
                        .Where(u => u.Email == lowerEmail)
                        .FirstOrDefault<User>();
