@@ -35,7 +35,7 @@ namespace LoginApp
 
                 string lowerEmail = txtEmail.Text.ToLower(new CultureInfo("en-US", false));
                 
-                var user = db.Users!
+                var user = db.Users
                        .Where(u => u.Email == lowerEmail)
                        .FirstOrDefault<User>();
 
