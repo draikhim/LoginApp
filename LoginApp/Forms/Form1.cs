@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
-
+using LoginApp.Forms;
 
 namespace LoginApp
 {
@@ -45,7 +45,7 @@ namespace LoginApp
                     {
                         this.Hide();
 
-                        User admin = new User();
+                        Admin admin = new Admin();
                         admin.Show();
                     }
                     else
