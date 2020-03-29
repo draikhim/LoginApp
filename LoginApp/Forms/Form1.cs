@@ -12,6 +12,8 @@ using LoginApp.Forms;
 
 namespace LoginApp
 {
+    // Allow user to reset password on own (sending reset link to user's email)
+
     public partial class FormLogin : Form
     {
         public FormLogin()

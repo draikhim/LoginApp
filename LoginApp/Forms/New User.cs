@@ -12,6 +12,11 @@ namespace LoginApp
 {
     public partial class User : Form
     {
+        // Clear form after creating new user. 
+        // Encrypt password before saving to db.
+        // Make user type dropdown.
+        // Handle exception that pops up sometimes
+
         public User()
         {
             InitializeComponent();
@@ -22,18 +27,10 @@ namespace LoginApp
 
         }
 
-        //private void Admin_FormClosed(object sender, FormClosedEventArgs e)
-        //{
-        //        Application.Exit();
-        //}
-
         private void Create_Click(object sender, EventArgs e)
         {
             using (var db = new LoginContext())
             {
-                // Clear form after creating new user. 
-                // Handle exception that pops up sometimes
-
                 User newUser = new User();
                 newUser.Email = txtEmail.Text.ToLower();
                 newUser.Password = txtPassword.Text;
