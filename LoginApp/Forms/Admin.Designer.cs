@@ -36,7 +36,7 @@
             // 
             // btnCreateUser
             // 
-            this.btnCreateUser.Location = new System.Drawing.Point(626, 356);
+            this.btnCreateUser.Location = new System.Drawing.Point(397, 265);
             this.btnCreateUser.Name = "btnCreateUser";
             this.btnCreateUser.Size = new System.Drawing.Size(114, 23);
             this.btnCreateUser.TabIndex = 0;
@@ -56,7 +56,6 @@
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // Email
             // 
@@ -70,13 +69,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(679, 340);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.btnCreateUser);
             this.Name = "Admin";
             this.Text = "Admin";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Admin_FormClosed);
-            this.Load += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.Load += new System.EventHandler(this.Admin_Load);
             this.ResumeLayout(false);
 
         }

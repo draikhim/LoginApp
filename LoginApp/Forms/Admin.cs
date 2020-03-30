@@ -28,20 +28,27 @@ namespace LoginApp.Forms
             user.Show();
         }
 
-
         private void Admin_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void Admin_Load(object sender, EventArgs e)
         {
-            
+            listView1.Items.Clear();
+            listView1.View = View.Details;
+
             using (var db = new LoginContext())
             {
-                
-        
-               
+                var users = db.Users;
+
+                foreach (var user in users)
+                {
+                    string[] row = { user.Email, user.Type };
+
+                    listView1.Items.Add(new ListViewItem(row));
+                }
+
             }
         }
     }
