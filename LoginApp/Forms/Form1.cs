@@ -36,12 +36,16 @@ namespace LoginApp
                 // Encrypt Password before saving to DB
 
                 string lowerEmail = txtEmail.Text.ToLower(new CultureInfo("en-US", false));
-                
+
                 var user = db.Users
                        .Where(u => u.Email == lowerEmail)
-                       .FirstOrDefault<User>();
+                       .FirstOrDefault<User>();               
 
-                if ((user != null) && (lowerEmail == user.Email) && (txtPassword.Text == user.Password))                
+                // Calling method from New User form
+                User newUser = new User();
+                var encryptedPassword = newUser.Encrypt(txtPassword.Text);
+
+                if ((user != null) && (lowerEmail == user.Email) && (encryptedPassword == user.Password))                
                 {
                     if (user.Type == "Admin")
                     {
