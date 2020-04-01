@@ -33,7 +33,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtUserType = new System.Windows.Forms.TextBox();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnCreate = new System.Windows.Forms.Button();
@@ -80,16 +79,6 @@
             this.txtUserType.Size = new System.Drawing.Size(125, 20);
             this.txtUserType.TabIndex = 6;
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(144, 131);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(57, 23);
-            this.btnUpdate.TabIndex = 7;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.Update_Click);
-            // 
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(144, 81);
@@ -124,7 +113,6 @@
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.txtUserType);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label3);
@@ -146,7 +134,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtUserType;
-        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnCreate;

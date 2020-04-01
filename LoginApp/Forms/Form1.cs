@@ -30,11 +30,6 @@ namespace LoginApp
         {
             using( var db = new LoginContext())
             {
-
-                // Downcase Email before saving to DB
-                // Init cap Type before saving to DB
-                // Encrypt Password before saving to DB
-
                 string lowerEmail = txtEmail.Text.ToLower(new CultureInfo("en-US", false));
 
                 var user = db.Users
@@ -75,8 +70,8 @@ namespace LoginApp
             // The password character is an asterisk.
             txtPassword.PasswordChar = '*';
 
-            // The control will allow no more than 25 characters.
-            txtPassword.MaxLength = 25;
+            // The control will allow no more than 35 characters.
+            txtPassword.MaxLength = 35;
         }
     }
 }

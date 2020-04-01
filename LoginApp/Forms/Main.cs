@@ -35,7 +35,7 @@ namespace LoginApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Unable to open link that was clicked.");
+                MessageBox.Show("Unable to open link that was clicked. " + ex);
             }
         }
 
@@ -46,6 +46,7 @@ namespace LoginApp
 
             //Call the Process.Start method to open the default browser with a URL:
             System.Diagnostics.Process.Start("https://www.ncdhhs.gov/covid-19-case-count-nc");
-        }        
+
+        }
     }
 }
