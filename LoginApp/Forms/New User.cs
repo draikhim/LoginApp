@@ -59,7 +59,7 @@ namespace LoginApp
                 User newUser = new User();
                 newUser.Email = txtEmail.Text.ToLower();
                 newUser.Password = Encrypt(txtPassword.Text);
-                newUser.Type = txtUserType.Text.First().ToString().ToUpper() + txtUserType.Text.Substring(1).ToLower();
+                newUser.Type = comboBox1.Text;
 
                 var result = db.Users
                        .Where(u => u.Email == txtEmail.Text)
