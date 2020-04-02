@@ -46,6 +46,8 @@
             this.txtPassword.Size = new System.Drawing.Size(125, 20);
             this.txtPassword.TabIndex = 11;
             this.txtPassword.Tag = "";
+            this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.Click += new System.EventHandler(this.TextBoxOnClick);
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // label4

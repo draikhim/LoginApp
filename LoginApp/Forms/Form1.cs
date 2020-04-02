@@ -12,10 +12,10 @@ using LoginApp.Forms;
 
 namespace LoginApp
 {
-    // Allow user to reset password on own (sending reset link to user's email)
-
     public partial class FormLogin : Form
     {
+        User newUser = new User();
+
         public FormLogin()
         {
             InitializeComponent();
@@ -34,10 +34,9 @@ namespace LoginApp
 
                 var user = db.Users
                        .Where(u => u.Email == lowerEmail)
-                       .FirstOrDefault<User>();               
+                       .FirstOrDefault<User>();
 
-                // Calling method from New User form
-                User newUser = new User();
+                // Calling method from New User form               
                 var encryptedPassword = newUser.Encrypt(txtPassword.Text);
 
                 if ((user != null) && (lowerEmail == user.Email) && (encryptedPassword == user.Password))                
@@ -45,14 +44,12 @@ namespace LoginApp
                     if (user.Type == "Admin")
                     {
                         this.Hide();
-
                         Admin admin = new Admin();
                         admin.Show();
                     }
                     else
                     {                   
                         this.Hide();
-
                         Main main = new Main();
                         main.Show();
                     }
@@ -65,6 +62,7 @@ namespace LoginApp
            
         }       
 
+        // Used at TextChanged event
         private void EncryptPassword(object sender, EventArgs e)
         {
             // The password character is an asterisk.

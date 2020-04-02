@@ -8,15 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using LoginApp.Forms;
 
 namespace LoginApp
 {
     public partial class User : Form
     {
         //TO DOs:
-        // Clear form after creating new user. 
-        // Make user type dropdown.
-        // Handle exception that pops up sometimes
+        // Clear form after creating new user.
+        // Refresh listview every create, delete or update event
+        // Handle exceptions
+        // Allow user to reset password on own (sending reset link to user's email) --> later
+
+
+        public Admin admin;
 
         public User()
         {
@@ -78,11 +83,6 @@ namespace LoginApp
 
                 }
             }
-        }      
-      
-        private void NewUser_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
+        }     
     }
 }

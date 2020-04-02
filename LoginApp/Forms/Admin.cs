@@ -15,15 +15,9 @@ namespace LoginApp.Forms
         public Admin()
         {
             InitializeComponent();
-        }
+        }        
         
-        private void btnCreateUser_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            User user = new User();
-            user.Show();
-        }
-
+        // App exits when this form closed
         private void Admin_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
@@ -44,11 +38,11 @@ namespace LoginApp.Forms
 
                     listView1.Items.Add(new ListViewItem(row));
 
-                    // Autosize based on column content size (email)
+                    // Autosize based on column content size 
                     listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
                 }
 
-                // Autosize based on column header size (User type)
+                // Autosize based on column header size
                 listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             }
         }
@@ -66,19 +60,18 @@ namespace LoginApp.Forms
 
                     if (user.Email == email)
                     {
-                        db.Users.Remove(user);
-
-                        // Removes item from listview only
+                        // Removes from listview only
                         listView1.SelectedItems[0].Remove();
 
+                        db.Users.Remove(user);                       
                         db.SaveChanges();
                         MessageBox.Show("User " + email + " deleted successfully!");
                     }
                 }
-            }
-                
+            }                
         }
 
+        // Enables and disables update and delete button based on user selection
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listView1.SelectedItems.Count > 0)
@@ -93,11 +86,20 @@ namespace LoginApp.Forms
             }
         }
 
+        // Takes to Update form
         private void btnToUpdateForm_Click(object sender, EventArgs e)
         {       
-            Update f2 = new Update();
-            f2.admin = this;
-            f2.Show();
+            Update update = new Update();
+            update.admin = this;
+            update.Show();
+        }
+
+        // Takes to Create User Form
+        private void btnCreateUser_Click(object sender, EventArgs e)
+        {
+            User newUser = new User();
+            newUser.admin = this;
+            newUser.Show();            
         }
     }
 }

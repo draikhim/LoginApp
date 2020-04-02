@@ -124,7 +124,6 @@
             this.Controls.Add(this.label1);
             this.Name = "User";
             this.Text = "New User";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NewUser_FormClosed);
             this.Load += new System.EventHandler(this.Admin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
