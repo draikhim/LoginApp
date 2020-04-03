@@ -15,11 +15,8 @@ namespace LoginApp
     public partial class User : Form
     {
         //TO DOs:
-        // Clear form after creating new user.
         // Refresh listview every create, delete or update event
-        // Handle exceptions
         // Allow user to reset password on own (sending reset link to user's email) --> later
-
 
         public Admin admin;
 
@@ -60,27 +57,35 @@ namespace LoginApp
         {
             using (var db = new LoginContext())
             {
-                // Add code to handle empty or null email, password and type
-                User newUser = new User();
-                newUser.Email = txtEmail.Text.ToLower();
-                newUser.Password = Encrypt(txtPassword.Text);
-                newUser.Type = comboBox1.Text;
+                if (!((String.IsNullOrEmpty(txtEmail.Text)) || (String.IsNullOrEmpty(txtPassword.Text)) || (String.IsNullOrEmpty(comboBox1.Text))))
+                {
+                    User newUser = new User();
+                    newUser.Email = txtEmail.Text.ToLower();
+                    newUser.Password = Encrypt(txtPassword.Text);
+                    newUser.Type = comboBox1.Text;
 
-                var result = db.Users
-                       .Where(u => u.Email == txtEmail.Text)
-                       .FirstOrDefault<User>();                
+                    var result = db.Users
+                           .Where(u => u.Email == txtEmail.Text)
+                           .FirstOrDefault<User>();
                 
-                if (result == null)
-                {                    
-                    db.Users.Add(newUser);
-                    db.SaveChanges();
+                    if (result == null) 
+                    {                    
+                        db.Users.Add(newUser);
+                        db.SaveChanges();
+                        MessageBox.Show("User: " + newUser.Email + " created successfully ");
 
-                    MessageBox.Show("User: " + newUser.Email + " created successfully ");
+                        // Clears form after creating new user
+                        this.Controls.Clear();
+                        this.InitializeComponent();
+                    }
+                    else
+                    {
+                        MessageBox.Show("User exists already.");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("User exists already.");
-
+                    MessageBox.Show("Either one or more fields are empty. Make correction and try again!");
                 }
             }
         }     

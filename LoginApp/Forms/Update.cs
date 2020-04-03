@@ -63,9 +63,10 @@ namespace LoginApp.Forms
                 {
                     result.Email = txtEmail.Text.ToLower();
                     result.Password = encryptedPassword;
-                    result.Type = comboBox1.Text;
+                    result.Type = comboBox1.Text;                   
 
                     db.SaveChanges();
+                    this.Hide();
                     MessageBox.Show("User updated successfully.");
                 }
                 else
@@ -95,7 +96,7 @@ namespace LoginApp.Forms
 
                         // Set UseSystemPasswordChar property to true to hide password
                         txtPassword.Text = result.Password;
-                        comboBox1.Text = result.Type;
+                        comboBox1.Text = result.Type;                        
                     }
                 }
             }

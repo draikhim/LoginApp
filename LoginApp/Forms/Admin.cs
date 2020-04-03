@@ -60,7 +60,7 @@ namespace LoginApp.Forms
 
                     if (user.Email == email)
                     {
-                        // Removes from listview only
+                        // Removes user from listview only
                         listView1.SelectedItems[0].Remove();
 
                         db.Users.Remove(user);                       
