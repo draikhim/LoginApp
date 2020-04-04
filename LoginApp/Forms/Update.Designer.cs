@@ -71,8 +71,10 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.BackColor = System.Drawing.SystemColors.Window;
             this.txtEmail.Location = new System.Drawing.Point(157, 57);
             this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(125, 20);
             this.txtEmail.TabIndex = 9;
             // 
