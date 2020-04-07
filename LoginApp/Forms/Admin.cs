@@ -12,9 +12,10 @@ namespace LoginApp.Forms
 {
     public partial class Admin : Form
     {
+
         public Admin()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }        
         
         // App exits when this form closed
@@ -65,7 +66,7 @@ namespace LoginApp.Forms
 
                         db.Users.Remove(user);                       
                         db.SaveChanges();
-                        MessageBox.Show("User " + email + " deleted successfully!");
+                        MessageBox.Show("User " + email + " deleted successfully!");                        
                     }
                 }
             }                

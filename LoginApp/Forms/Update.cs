@@ -61,9 +61,13 @@ namespace LoginApp.Forms
 
                 if (result != null)
                 {
+                    // Set the txtEmail control's ReadOnly property to true
                     result.Email = txtEmail.Text.ToLower();
                     result.Password = encryptedPassword;
-                    result.Type = comboBox1.Text;                   
+                    result.Type = comboBox1.Text;
+
+                    // Updates selected row of listview
+                    admin.listView1.SelectedItems[0].SubItems[2].Text = comboBox1.Text;
 
                     db.SaveChanges();
                     this.Hide();
